@@ -1,0 +1,273 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_buyerAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address payable",
+				"name": "_sellerAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_price",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_percent",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_sPer",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_titleA",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_descriptionA",
+				"type": "string"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "buyer",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "seller",
+				"type": "address"
+			},
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "salePrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "statePercent",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "sellerPercent",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "buyerStake",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "sellerStake",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "buyerCancel",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "sellerCancel",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "cancelled",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "agreAddress",
+						"type": "address"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct Agreement.ContractStatus",
+				"name": "state",
+				"type": "tuple"
+			}
+		],
+		"name": "AgreementStateChanged",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "agreementAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "cancel",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "confirm",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getStatus",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "salePrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "statePercent",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "sellerPercent",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "buyerStake",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "sellerStake",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "buyerCancel",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "sellerCancel",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "cancelled",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "agreAddress",
+						"type": "address"
+					}
+				],
+				"internalType": "struct Agreement.ContractStatus",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "revokeCancellation",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "revokeStake",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "stake",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	}
+]
